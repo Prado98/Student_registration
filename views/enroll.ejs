@@ -1,0 +1,58 @@
+<%include header.ejs%>
+    <h3  align='center'>Enroll for your course now</h3><br> <br>
+    <div class="row"></div>
+    <div class="row"></div>
+    <div class="row"></div>
+    <div class="container">
+    <div class="row">
+        <!--<%if(result.courseType == 0) { %>-->
+        <form action="/courseGet" method="get">
+                <select id="cname" name="cname" required>
+                    <%var len = res1.length; %>
+                    <%for(var i =0; i<len; i++) { %>
+                    <option value="<%=res1[i].name%>"><%=res1[i].name%></option>
+                    <%}%>
+                </select>
+                <button class="btn" type="submit">click to expand</button>
+        </form>
+        <p id="course">
+        </p>
+        <!--<%}%>
+        <%if(result.courseType == 1) { %>-->
+            <div class="hide">
+                <form id="go" action="/enroll" method="GET">
+                    <input type="text" name="id" value="<%=res1.id%>">
+                </form>
+            </div>
+            <div>
+                <h4>Course name : <%=res1.name%> <br>Course id: <%=res1.id%> <br>Credits: <%=res1.credit%></h4>
+                <button onclick="send()" class="btn">Submit</button>
+            </div>
+
+        <!--<%}%>-->
+    </div>
+</div>
+</body>
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-firestore.js"></script>
+
+
+<script>
+    $(document).ready(function() {
+    $('select').material_select();
+    });
+</script>
+<script type="text/javascript" src="js/app.js"></script>
+<script>
+    function send(){
+        document.getElementById("go").submit();
+   
+
+}
+</script>
+</html>

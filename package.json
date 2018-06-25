@@ -1,0 +1,21 @@
+{
+  "name": "cloud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-session": "^2.0.0-beta.3",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "firebase": "^4.8.0",
+    "firebase-admin": "^5.5.0",
+    "firebase-cookie-session": "^3.0.0",
+    "firebase-functions": "^0.7.1"
+  },
+  "author": "",
+  "license": "ISC"
+}

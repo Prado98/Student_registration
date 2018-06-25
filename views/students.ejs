@@ -1,0 +1,32 @@
+<%include header.ejs%>
+<div class="container">
+    <table class="striped bordered">
+        <thead>
+          <tr>
+              <th><b>Student roll number</b></th>
+          </tr>
+        </thead>
+    
+        <tbody>
+        <%for(var i = 0; i<res1.length; i++){ %>
+          <tr>
+            <td><%=res1[i]%></td>
+          </tr>
+        <%}%>
+        </tbody>
+    </table>
+</div>
+</body>
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script>
+        $(document).ready(function() {
+        $('select').material_select();
+        });
+    </script>
+</html>

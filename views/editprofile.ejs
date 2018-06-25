@@ -1,0 +1,49 @@
+<%include header.ejs%>
+
+<div class="container">
+<form action="/editSubmit" method="POST">
+    <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <input placeholder="First name" name="fname" id="first_name" type="text" class="validate">
+            </div>
+            <div class="input-field col s6">
+              <input id="last_name" type="text" name="lname" class="validate">
+              <label for="last_name">Last Name</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="password" name="pass" type="password" class="validate">
+              <label for="password">Password</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="email" type="email" name="email" class="validate">
+              <label for="email">Email</label>
+            </div>
+          </div>
+        </div>
+        <input type="submit" class="btn">
+    </form>
+    <h3>Your details</h3>
+    <h5>First name: <%=res1.fname%><br><br>Last name: <%=res1.lname%><br><br>Roll Number: <%=res1.roll%><br><br>Email: <%=res1.email%></h5>
+</div>
+</body>
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-firestore.js"></script>
+
+
+<script>
+    $(document).ready(function() {
+    $('select').material_select();
+    });
+</script>
+</html>

@@ -1,0 +1,52 @@
+<%include header.ejs%>
+<div class="container" style="width:100%;">
+    <%if(result.type == 2){ //Student %>
+    <div class="row" style="position: absolute;top:50%;width:100%">
+        <div class="col s6" align="right" style="width:50%;"><a class="btn" style="color:white;" href="/showEnroll">Enrolled courses</a></div>
+        <div class="col s6" style="width:50%;"><a class="btn" style="color:white;width:33%" href="/enroll">Enroll Now</a></button></div>
+    
+    </div>    
+    <%}%>
+    <%if(result.type == 1){ %>
+        <div class="container">
+            <div class="row" style="position: absolute;top:50%;width:25%">
+                <form action="/teacherSelect" method="GET">
+                <select name="teacher">
+                    <%for(var i =0; i<res1.length;i++){%>
+                    <option value="<%=res1[i].id%>"><%=res1[i].name%></option>
+                    <%}%>
+                    
+                    </select>
+                    <input type="submit" class="btn">
+                </form>
+            </div>
+        </div>
+    <%}%>
+        
+</div>
+
+
+</body>
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<style>
+        html, body {
+          max-width: 100%;
+          overflow-x: hidden;
+      }
+      
+      body{
+        background-color:lightgrey;
+      }
+</style>
+<script>
+        $(document).ready(function() {
+        $('select').material_select();
+        });
+    </script>
+</html>
